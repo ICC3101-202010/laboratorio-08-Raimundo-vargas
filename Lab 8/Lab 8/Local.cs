@@ -20,5 +20,7 @@ namespace Lab_8
             this.horario = horario;
             this.tipo = tipo;
         }
+
+        public abstract string Verinformacion();
     }
 }

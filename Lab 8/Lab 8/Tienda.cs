@@ -14,5 +14,17 @@ namespace Lab_8
         {
             this.categorias = categorias;
         }
+
+        public override string Verinformacion()
+        {
+            string cat="";
+            for (int i = 0; i < categorias.Count; i++)
+            {
+                cat += categorias[i]+"\n";
+            }
+            return cat;
+            
+
+        }
     }
 }

@@ -12,5 +12,9 @@ namespace Lab_8
         public Recreacional(string dueno, string id, string horario, string tipo) : base(dueno, id, horario, tipo)
         {
         }
+        public override string Verinformacion()
+        {
+            return "";
+        }
     }
 }

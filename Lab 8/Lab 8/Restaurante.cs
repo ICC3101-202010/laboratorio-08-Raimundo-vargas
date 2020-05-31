@@ -14,5 +14,17 @@ namespace Lab_8
         {
             this.exclusivas = exclusivas;
         }
+        public override string Verinformacion()
+        {
+            if (exclusivas==true)
+            {
+                return "SI";
+            }
+            else
+            {
+                return "NO";
+            }
+            
+        }
     }
 }

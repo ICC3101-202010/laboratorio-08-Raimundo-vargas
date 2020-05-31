@@ -14,5 +14,9 @@ namespace Lab_8
         {
             this.salas = salas;
         }
+        public override string Verinformacion()
+        {
+            return salas;
+        }
     }
 }

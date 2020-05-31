@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup13 = new System.Windows.Forms.ListViewGroup("Tipos", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup14 = new System.Windows.Forms.ListViewGroup("Duenos", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup15 = new System.Windows.Forms.ListViewGroup("Ids", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup16 = new System.Windows.Forms.ListViewGroup("Horarios", System.Windows.Forms.HorizontalAlignment.Left);
             this.Btn_crear = new System.Windows.Forms.Button();
             this.btn_revisar = new System.Windows.Forms.Button();
             this.btn_Ver = new System.Windows.Forms.Button();
@@ -72,6 +68,8 @@
             this.Id_Buscado = new System.Windows.Forms.Label();
             this.Texto_Segun_tipo = new System.Windows.Forms.Label();
             this.Buscar = new System.Windows.Forms.Button();
+            this.Texto_clave = new System.Windows.Forms.Label();
+            this.clave = new System.Windows.Forms.Label();
             this.panel_Nuevo_Local.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Numero_de_salas)).BeginInit();
             this.panel_Ver_Todos_Los_Locales.SuspendLayout();
@@ -324,9 +322,10 @@
             // 
             this.panel_Ver_Todos_Los_Locales.Controls.Add(this.Ver_todo);
             this.panel_Ver_Todos_Los_Locales.Controls.Add(this.btn_atras_3);
-            this.panel_Ver_Todos_Los_Locales.Location = new System.Drawing.Point(683, 331);
+            this.panel_Ver_Todos_Los_Locales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Ver_Todos_Los_Locales.Location = new System.Drawing.Point(0, 0);
             this.panel_Ver_Todos_Los_Locales.Name = "panel_Ver_Todos_Los_Locales";
-            this.panel_Ver_Todos_Los_Locales.Size = new System.Drawing.Size(59, 51);
+            this.panel_Ver_Todos_Los_Locales.Size = new System.Drawing.Size(967, 538);
             this.panel_Ver_Todos_Los_Locales.TabIndex = 4;
             this.panel_Ver_Todos_Los_Locales.Visible = false;
             this.panel_Ver_Todos_Los_Locales.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Ver_Todos_Los_Locales_Paint);
@@ -348,6 +347,8 @@
             // 
             // panel_Revisar_Local
             // 
+            this.panel_Revisar_Local.Controls.Add(this.clave);
+            this.panel_Revisar_Local.Controls.Add(this.Texto_clave);
             this.panel_Revisar_Local.Controls.Add(this.Buscar);
             this.panel_Revisar_Local.Controls.Add(this.Id_Buscado);
             this.panel_Revisar_Local.Controls.Add(this.Texto_Segun_tipo);
@@ -361,10 +362,9 @@
             this.panel_Revisar_Local.Controls.Add(this.label6);
             this.panel_Revisar_Local.Controls.Add(this.label5);
             this.panel_Revisar_Local.Controls.Add(this.btn_Atras_2);
-            this.panel_Revisar_Local.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Revisar_Local.Location = new System.Drawing.Point(0, 0);
+            this.panel_Revisar_Local.Location = new System.Drawing.Point(688, 217);
             this.panel_Revisar_Local.Name = "panel_Revisar_Local";
-            this.panel_Revisar_Local.Size = new System.Drawing.Size(967, 538);
+            this.panel_Revisar_Local.Size = new System.Drawing.Size(54, 51);
             this.panel_Revisar_Local.TabIndex = 4;
             this.panel_Revisar_Local.Visible = false;
             this.panel_Revisar_Local.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Revisar_Local_Paint);
@@ -408,20 +408,6 @@
             this.Ids,
             this.Horarios});
             this.Ver_todo.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            listViewGroup13.Header = "Tipos";
-            listViewGroup13.Name = "Tipos";
-            listViewGroup14.Header = "Duenos";
-            listViewGroup14.Name = "Duenos";
-            listViewGroup15.Header = "Ids";
-            listViewGroup15.Name = "Ids";
-            listViewGroup15.Tag = "Ids";
-            listViewGroup16.Header = "Horarios";
-            listViewGroup16.Name = "Horarios";
-            this.Ver_todo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup13,
-            listViewGroup14,
-            listViewGroup15,
-            listViewGroup16});
             this.Ver_todo.HideSelection = false;
             this.Ver_todo.Location = new System.Drawing.Point(12, 12);
             this.Ver_todo.Name = "Ver_todo";
@@ -494,7 +480,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(110, 289);
+            this.label8.Location = new System.Drawing.Point(110, 259);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 38);
             this.label8.TabIndex = 12;
@@ -503,7 +489,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(110, 289);
+            this.label9.Location = new System.Drawing.Point(110, 259);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 38);
             this.label9.TabIndex = 13;
@@ -513,7 +499,7 @@
             // 
             this.Horario_Local.AutoSize = true;
             this.Horario_Local.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Horario_Local.Location = new System.Drawing.Point(574, 224);
+            this.Horario_Local.Location = new System.Drawing.Point(110, 394);
             this.Horario_Local.Name = "Horario_Local";
             this.Horario_Local.Size = new System.Drawing.Size(0, 38);
             this.Horario_Local.TabIndex = 16;
@@ -523,7 +509,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(574, 176);
+            this.label12.Location = new System.Drawing.Point(110, 346);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(168, 38);
             this.label12.TabIndex = 15;
@@ -533,7 +519,7 @@
             // 
             this.Tipo.AutoSize = true;
             this.Tipo.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tipo.Location = new System.Drawing.Point(110, 329);
+            this.Tipo.Location = new System.Drawing.Point(110, 299);
             this.Tipo.Name = "Tipo";
             this.Tipo.Size = new System.Drawing.Size(0, 38);
             this.Tipo.TabIndex = 14;
@@ -543,7 +529,7 @@
             // 
             this.Id_Buscado.AutoSize = true;
             this.Id_Buscado.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Id_Buscado.Location = new System.Drawing.Point(574, 334);
+            this.Id_Buscado.Location = new System.Drawing.Point(110, 477);
             this.Id_Buscado.Name = "Id_Buscado";
             this.Id_Buscado.Size = new System.Drawing.Size(0, 38);
             this.Id_Buscado.TabIndex = 18;
@@ -554,7 +540,7 @@
             this.Texto_Segun_tipo.AutoSize = true;
             this.Texto_Segun_tipo.CausesValidation = false;
             this.Texto_Segun_tipo.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Texto_Segun_tipo.Location = new System.Drawing.Point(574, 289);
+            this.Texto_Segun_tipo.Location = new System.Drawing.Point(110, 432);
             this.Texto_Segun_tipo.Name = "Texto_Segun_tipo";
             this.Texto_Segun_tipo.Size = new System.Drawing.Size(70, 38);
             this.Texto_Segun_tipo.TabIndex = 17;
@@ -572,6 +558,28 @@
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = false;
             this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
+            // 
+            // Texto_clave
+            // 
+            this.Texto_clave.AutoSize = true;
+            this.Texto_clave.CausesValidation = false;
+            this.Texto_clave.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Texto_clave.Location = new System.Drawing.Point(527, 176);
+            this.Texto_clave.Name = "Texto_clave";
+            this.Texto_clave.Size = new System.Drawing.Size(0, 38);
+            this.Texto_clave.TabIndex = 20;
+            this.Texto_clave.Click += new System.EventHandler(this.Texto_clave_Click);
+            // 
+            // clave
+            // 
+            this.clave.AutoSize = true;
+            this.clave.CausesValidation = false;
+            this.clave.Font = new System.Drawing.Font("Broadway", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clave.Location = new System.Drawing.Point(527, 234);
+            this.clave.Name = "clave";
+            this.clave.Size = new System.Drawing.Size(0, 38);
+            this.clave.TabIndex = 21;
+            this.clave.Click += new System.EventHandler(this.clave_Click);
             // 
             // Inicio
             // 
@@ -642,6 +650,8 @@
         private System.Windows.Forms.Label Id_Buscado;
         private System.Windows.Forms.Label Texto_Segun_tipo;
         private System.Windows.Forms.Button Buscar;
+        private System.Windows.Forms.Label Texto_clave;
+        private System.Windows.Forms.Label clave;
     }
 }
 

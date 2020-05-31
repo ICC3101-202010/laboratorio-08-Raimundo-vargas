@@ -138,6 +138,10 @@ namespace Lab_8
                                         Nombre_Dueño.Text = "";
                                         Id.Text = "";
                                         Horario.Text = "";
+                                        Numero_de_salas.Visible = false;
+                                        Categorias.Visible = false;
+                                        Exclusividad.Visible = false;
+                                        txt_tipo.Text = "";
 
                                     }
                                     else
@@ -210,6 +214,11 @@ namespace Lab_8
                                         Nombre_Dueño.Text = "";
                                         Id.Text = "";
                                         Horario.Text = "";
+                                        Numero_de_salas.Visible = false;
+                                        Categorias.Visible = false;
+                                        Exclusividad.Visible = false;
+                                        txt_tipo.Text = "";
+                                        seleccionados.Clear();
                                     }
                                         
                                     else
@@ -274,6 +283,10 @@ namespace Lab_8
                                         Nombre_Dueño.Text = "";
                                         Id.Text = "";
                                         Horario.Text = "";
+                                        Numero_de_salas.Visible = false;
+                                        Categorias.Visible = false;
+                                        Exclusividad.Visible = false;
+                                        txt_tipo.Text = "";
                                     }
                                     else
                                     {
@@ -335,6 +348,10 @@ namespace Lab_8
                                     Nombre_Dueño.Text = "";
                                     Id.Text = "";
                                     Horario.Text = "";
+                                    Numero_de_salas.Visible = false;
+                                    Categorias.Visible = false;
+                                    Exclusividad.Visible = false;
+                                    txt_tipo.Text = "";
                                 }
                                 else
                                 {
@@ -419,6 +436,15 @@ namespace Lab_8
         {
 
         }
+        private void Texto_clave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clave_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void Buscar_Click(object sender, EventArgs e)
         {
@@ -433,15 +459,49 @@ namespace Lab_8
                     parametros.Add(Locales[i].dueno);
                     parametros.Add(Locales[i].id);
                     parametros.Add(Locales[i].horario);
+                    parametros.Add(Locales[i].Verinformacion());
 
                 }
             }
             if (existe=="si")
             {
-                Nombre_Dueno.Text = parametros[1];
-                Tipo.Text = parametros[0];
-                Horario_Local.Text = parametros[3];
-                Id_Buscado.Text = parametros[2];
+                if(parametros[0]=="Restaurante")
+                {
+                    Nombre_Dueno.Text = parametros[1];
+                    Tipo.Text = parametros[0];
+                    Horario_Local.Text = parametros[3];
+                    Id_Buscado.Text = parametros[2];
+                    Texto_clave.Text = "Mesas Exclusivas:";
+                    clave.Text = parametros[4];
+                }
+                else if (parametros[0] == "Tienda")
+                {
+                    Nombre_Dueno.Text = parametros[1];
+                    Tipo.Text = parametros[0];
+                    Horario_Local.Text = parametros[3];
+                    Id_Buscado.Text = parametros[2];
+                    Texto_clave.Text = "Categorias:";
+                    clave.Text = parametros[4];
+                }
+                else if (parametros[0] == "Cine")
+                {
+                    Nombre_Dueno.Text = parametros[1];
+                    Tipo.Text = parametros[0];
+                    Horario_Local.Text = parametros[3];
+                    Id_Buscado.Text = parametros[2];
+                    Texto_clave.Text = "N de Salas:";
+                    clave.Text = parametros[4];
+                }
+                else if (parametros[0] == "Recreacional")
+                {
+                    Nombre_Dueno.Text = parametros[1];
+                    Tipo.Text = parametros[0];
+                    Horario_Local.Text = parametros[3];
+                    Id_Buscado.Text = parametros[2];
+                    Texto_clave.Text = "";
+                    clave.Text = "";
+                }
+
             }
             else
             {
@@ -464,6 +524,7 @@ namespace Lab_8
         {
             panel_Ver_Todos_Los_Locales.Visible = true;
             panel_Ver_Todos_Los_Locales.Dock = DockStyle.Fill;
+            Ver_todo.Items.Clear();
 
             for (int i = 0; i < Locales.Count; i++)
             {
@@ -497,8 +558,10 @@ namespace Lab_8
         {
 
         }
-        //
 
         
+        //
+
+
     }
 }
